@@ -1,5 +1,4 @@
-const BOOKING_LINK =
-  "https://www.upwork.com/services/product/development-it-ai-driven-saas-platform-ecom-platform-2073477430135302936?ref=fl_profile";
+import { BOOKING_URL } from "@/lib/links";
 
 const TIERS = [
   {
@@ -7,7 +6,7 @@ const TIERS = [
     duration: "One week, fixed fee",
     description:
       "I map your operation, design the data model, and hand you an architecture document and a milestone plan with costs. Yours to keep, whether or not I build it.",
-    price: "From $500",
+    price: "$750",
     featured: true,
   },
   {
@@ -15,7 +14,7 @@ const TIERS = [
     duration: "Four to eight weeks, fixed scope",
     description:
       "Weekly demos, agreed milestones, handover documentation at the end.",
-    price: "From $3,000",
+    price: "From $8,000",
     featured: false,
   },
   {
@@ -23,7 +22,7 @@ const TIERS = [
     duration: "Monthly retainer",
     description:
       "Capped hours, priority response, for systems already running.",
-    price: "From $1,000/mo",
+    price: "From $2,000/mo",
     featured: false,
   },
 ];
@@ -73,16 +72,22 @@ export default function WaysToStart() {
                 {tier.price}
               </p>
               <a
-                href={BOOKING_LINK}
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary mt-6 w-full text-center"
               >
-                Get started
+                Book a call
               </a>
             </div>
           ))}
         </div>
+
+        {/* ── Pricing note ── */}
+        <p className="mt-10 text-center text-sm text-ink/50">
+          Fixed-price engagements. The scoping sprint fee is credited against
+          the build if you go ahead.
+        </p>
       </div>
     </section>
   );

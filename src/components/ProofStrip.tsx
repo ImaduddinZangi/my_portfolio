@@ -1,8 +1,6 @@
 const CLIENTS = [
-  { name: "Labverse", country: "Pakistan" },
   { name: "Optima.AI", country: "UK" },
   { name: "CDI Tech", country: "USA" },
-  { name: "Africa House Pakistan", country: "Pakistan" },
   { name: "CYORN", country: "Australia" },
   { name: "Usee-360", country: "UAE" },
   { name: "Inspection Mentoring", country: "USA" },
@@ -14,7 +12,10 @@ function ClientChip({ name, country }: { name: string; country: string }) {
   return (
     <span className="inline-flex items-center gap-3 mx-6 shrink-0">
       {/* Decorative dot */}
-      <span className="h-1.5 w-1.5 rounded-full bg-primary-300 shrink-0" />
+      <span
+        className="h-1.5 w-1.5 rounded-full bg-primary-300 shrink-0"
+        aria-hidden="true"
+      />
       <span className="font-serif text-xl font-semibold text-ink tracking-tight">
         {name}
       </span>
@@ -59,9 +60,9 @@ export default function ProofStrip() {
 
       {/* ── Caption ── */}
       <p className="mt-6 text-center text-sm font-medium tracking-widest uppercase text-ink/40">
-        Delivered across the UK &nbsp;·&nbsp; USA &nbsp;·&nbsp; Australia
-        &nbsp;·&nbsp; Italy &nbsp;·&nbsp; Saudi Arabia &nbsp;·&nbsp; UAE
-        &nbsp;·&nbsp; Pakistan
+        Delivered for clients across the UK &nbsp;&middot;&nbsp; USA
+        &nbsp;&middot;&nbsp; Australia &nbsp;&middot;&nbsp; Saudi Arabia
+        &nbsp;&middot;&nbsp; UAE &nbsp;&middot;&nbsp; Pakistan
       </p>
     </section>
   );

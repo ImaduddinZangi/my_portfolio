@@ -1,5 +1,4 @@
-const BOOKING_LINK =
-  "https://www.upwork.com/services/product/development-it-ai-driven-saas-platform-ecom-platform-2073477430135302936?ref=fl_profile";
+import { BOOKING_URL, EMAIL, UPWORK_URL } from "@/lib/links";
 
 const NAV_LINKS = [
   { label: "Work", href: "#what-i-build" },
@@ -20,7 +19,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: "Upwork",
-    href: BOOKING_LINK,
+    href: UPWORK_URL,
   },
 ];
 
@@ -44,15 +43,15 @@ export default function Footer() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href={BOOKING_LINK}
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-8 py-4"
               >
-                Hire me on Upwork
+                Book a 15-minute call
               </a>
               <a
-                href="mailto:imaduddinzangi07@gmail.com"
+                href={EMAIL}
                 className="text-sm font-medium text-primary-300 no-underline hover:text-paper transition-colors"
               >
                 or email me &rarr;
@@ -101,7 +100,7 @@ export default function Footer() {
                 ))}
                 <li>
                   <a
-                    href="mailto:imaduddinzangi07@gmail.com"
+                    href={EMAIL}
                     className="text-sm text-primary-300 no-underline hover:text-paper transition-colors"
                   >
                     Email

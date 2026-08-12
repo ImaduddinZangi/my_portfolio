@@ -24,7 +24,11 @@ const fraunces = localFont({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://imaduddin-zangi.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Imaduddin Zangi — Operations Software Engineer",
   description:
     "I build the software that runs inspections, inventory and logistics operations. Five years, twelve production systems, eight countries. Usually the only engineer on the project.",
@@ -39,11 +43,25 @@ export const metadata: Metadata = {
     "React Native",
     "PostgreSQL",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Imaduddin Zangi — Operations Software Engineer",
     description:
       "I build the software that runs inspections, inventory and logistics operations. Five years, twelve production systems, eight countries.",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og.png"],
   },
 };
 

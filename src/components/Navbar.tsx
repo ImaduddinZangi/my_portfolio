@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-const BOOKING_LINK =
-  "https://www.upwork.com/services/product/development-it-ai-driven-saas-platform-ecom-platform-2073477430135302936?ref=fl_profile";
+import { BOOKING_URL } from "@/lib/links";
 
 const NAV_LINKS = [
   { label: "Work", href: "#what-i-build" },
@@ -63,12 +61,12 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={BOOKING_LINK}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary !py-2.5 !px-5 !text-sm !rounded-md"
           >
-            Hire me
+            Book a call
           </a>
         </div>
 
@@ -115,13 +113,13 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={BOOKING_LINK}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="btn-primary !py-2.5 !text-sm text-center !rounded-md mt-2"
           >
-            Hire me
+            Book a call
           </a>
         </div>
       </div>

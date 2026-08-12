@@ -1,5 +1,4 @@
-const BOOKING_LINK =
-  "https://www.upwork.com/services/product/development-it-ai-driven-saas-platform-ecom-platform-2073477430135302936?ref=fl_profile";
+import { BOOKING_URL } from "@/lib/links";
 
 export default function Hero() {
   return (
@@ -22,14 +21,19 @@ export default function Hero() {
 
         {/* ── CTA ── */}
         <div className="mt-10">
-          <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4">
-            Hire me on Upwork
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-lg px-8 py-4"
+          >
+            Book a 15-minute call
           </a>
         </div>
 
         {/* ── Risk-reduction line ── */}
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-paper/60">
-          No pitch deck. Twenty minutes on your operation, and you&rsquo;ll
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-paper/60">
+          No pitch deck. Fifteen minutes on your operation, and you&rsquo;ll
           leave with an honest answer on whether software is even the right fix.
         </p>
       </div>

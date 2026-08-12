@@ -27,7 +27,7 @@ const FAQS = [
   {
     question: "What don\u2019t you do?",
     answer:
-      "Native iOS/Android in Swift or Kotlin, machine-learning research, and design-only work. Naming what I decline makes everything else more credible.",
+      "Native iOS/Android in Swift or Kotlin, machine-learning research, and design-only work. If your project needs one of those, I\u2019ll say so on the call rather than take the work.",
   },
 ];
 
@@ -50,7 +50,10 @@ export default function FAQ() {
                 <span className="font-serif text-lg font-semibold text-ink pr-4">
                   {faq.question}
                 </span>
-                <span className="faq-icon shrink-0 text-2xl leading-none text-primary-600">
+                <span
+                  className="faq-icon shrink-0 text-2xl leading-none text-primary-600"
+                  aria-hidden="true"
+                >
                   +
                 </span>
               </summary>
