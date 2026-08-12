@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* ── Ink & Iris palette — generic "primary-*" naming for easy retheming ── */
+:root {
+  --ink:          #1B1526;
+  --primary-900:  #2E1F52;
+  --primary-700:  #3D2A6E;
+  --primary-600:  #5B3FA8;
+  --primary-500:  #7055C0;
+  --primary-300:  #B9A8E8;
+  --primary-50:   #F4F1FA;
+  --paper:        #FBFAF8;
+  --border:       #E4DFEE;
+  --amber:        #C98A2E;
+}
+
+/* ── Register palette as Tailwind v4 theme tokens ── */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-primary-900: var(--primary-900);
+  --color-primary-700: var(--primary-700);
+  --color-primary-600: var(--primary-600);
+  --color-primary-500: var(--primary-500);
+  --color-primary-300: var(--primary-300);
+  --color-primary-50: var(--primary-50);
+  --color-paper: var(--paper);
+  --color-border: var(--border);
+  --color-amber: var(--amber);
+
+  --font-serif: var(--font-fraunces), "Georgia", serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", "Arial", sans-serif;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* ── Links (scoped to main content so navbar isn't affected) ── */
+main a {
+  color: var(--primary-600);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+main a:hover {
+  color: var(--primary-900);
+}
+
+/* ── Button base ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primary-600);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-900);
+  color: #ffffff;
+}
+
+/* ── FAQ accordion ── */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-icon {
+  transition: transform 0.2s ease;
+}
+
+/* ── Selection colour ── */
+::selection {
+  background-color: var(--primary-300);
+  color: var(--ink);
+}
+
+/* ── Marquee / proof-strip ticker ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
